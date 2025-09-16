@@ -1,0 +1,15 @@
+[Unit]
+Description=DutyBot Web Panel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/opt/dutybot2
+ExecStart=/opt/dutybot2/.venv/bin/python /opt/dutybot2/panel.py
+Restart=always
+RestartSec=3
+User=root
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
